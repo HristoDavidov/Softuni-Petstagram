@@ -4,7 +4,7 @@
 
 <head>
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="icon" type="image/x-icon" href="/static/images/free-30-instagram-stories-icons23_122570.png">
+    <link rel="icon" type="image/x-icon" href="/images/free-30-instagram-stories-icons23_122570.png">
     <title>Petstagram</title>
 </head>
 
@@ -42,22 +42,8 @@
                                 <i>Catalog</i>
                             </a>
                         </li>
-
-                        <!--For Guest User-->
-                        <li class="nav-item">
-                            <!-- Link to Login Page -->
-                            <a href="/users/login">
-                                <i>Login</i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <!-- Link to Register Page -->
-                            <a href="/users/register">
-                                <i>Register</i>
-                            </a>
-                        </li>
-
                         <!--For login users-->
+                        {{#if isAuthenticated}}
                         <li class="nav-item">
                             <!-- Link to Add Photo Page -->
                             <a href="#">
@@ -78,6 +64,21 @@
                                 <i>Logout</i>
                             </a>
                         </li>
+                        {{else}}
+                        <!--For Guest User-->
+                        <li class="nav-item">
+                            <!-- Link to Login Page -->
+                            <a href="/users/login">
+                                <i>Login</i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- Link to Register Page -->
+                            <a href="/users/register">
+                                <i>Register</i>
+                            </a>
+                        </li>
+                        {{/if}}
                     </ul>
                 </div>
             </div>
