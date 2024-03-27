@@ -6,6 +6,12 @@ const { getErrorMessage } = require('../utils/errorHelpers');
 router.get('/create', (req, res) => {
     res.render('photos/create');
 });
+//catalog
+router.get('/', async (req, res) => {
+
+    const photos = await photoManager.getAll().lean();
+    res.render('photos', { photos });
+})
 
 router.post('/create', async (req, res) => {
     const photoData = {
@@ -18,7 +24,7 @@ router.post('/create', async (req, res) => {
 
         res.redirect('/photos');
     } catch (err) {
-        res.render('photos/create', { error: getErrorMessage(err)});
+        res.render('photos/create', { error: getErrorMessage(err) });
     }
 });
 
