@@ -10,7 +10,7 @@ const { errorHandler } = require('./middlewares/errorHandlerMiddleware');
 const routes = require('./routes');
 
 
-const PORT = 5000;
+const PORT = 3000;
 
 const app = express();
 
