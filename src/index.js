@@ -31,7 +31,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(auth);
 app.use(routes);
-app.use(errorHandler);
+//app.use(errorHandler);
 
 
 app.listen(PORT, console.log(`Server is listening on port ${PORT}...`));

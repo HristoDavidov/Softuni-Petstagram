@@ -5,30 +5,43 @@ const photoSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Name is required!'],
     },
-    image:{
+    image: {
         type: String,
         required: [true, 'Image is required!'],
     },
-    age:{
+    age: {
         type: Number,
         required: [true, 'Age is required!']
     },
-    description:{
+    description: {
         type: String,
         required: [true, 'Description is required!']
     },
-    location:{
+    location: {
         type: String,
         required: [true, 'Location is required!']
     },
-    owner:{
+    owner: {
         type: mongoose.Types.ObjectId,
         ref: 'User',
     },
-    
-   // • commentList – an array of objects containing the user's ID and the comment content: [ { userID: '1234',
-   // comment: 'Nice photo!'} ]
-    
+    comments: [
+        {
+            user: {
+                type: mongoose.Types.ObjectId,
+                required: true,
+                ref: 'User',
+            },
+            message: {
+                type: String,
+                required: [true, 'Comment message is required!'],
+            }
+        },
+    ],
+
+    // • commentList – an array of objects containing the user's ID and the comment content: [ { userID: '1234',
+    // comment: 'Nice photo!'} ]
+
 });
 
 
